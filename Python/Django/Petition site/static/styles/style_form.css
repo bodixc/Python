@@ -1,0 +1,151 @@
+body {
+    font-family: 'Literata', serif;
+    margin: 10px;
+}
+
+.title {
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid gray; 
+}
+
+label {
+    float: left;
+    width: 33%;
+    font-size: 18px;
+    margin-left: 2px;
+}
+
+.form {
+    margin-top: 25px;
+}
+
+form {
+    width: 40%;
+    box-shadow: 0 0 10px #9c9c9c;
+    border-radius: 10px;
+    margin-left: 30%;
+    padding: 16px;
+    padding-top: 6px;
+}
+
+.row {
+    border-bottom: 2px solid gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.help {
+    margin-left: 33%;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;    
+}
+
+
+input {
+    height: 20px;
+    border: 2px solid darkgray;
+    border-radius: 5px;
+    width: 32%;
+    font-family: 'Literata', serif;
+    font-size: 18px;
+    padding-bottom: 4px;
+}
+
+button {
+    padding: 3px;
+    margin-left: 33.5%;
+    margin-top: 16px;
+    border: 2px solid #3a3a3a;
+    width: 33%;
+    border-radius: 5px;
+    background-color: #4C4C4C;
+    color: white;
+    font-size: 16px;
+}
+
+
+p {
+    text-align: center;
+    margin: 1px;
+    padding-left: 2px;
+}
+
+select {
+    height: 25px;
+    border: 2px solid #3a3a3a;
+    font-size: 18px;
+}
+
+textarea {
+    font-size: 18px;
+    width: 65%;
+}
+
+.social {
+    color: white;
+    display: block;
+    width: 14%;
+    margin-top: 18px;
+    margin-left: 44%;
+}
+
+.google {
+    background-color: #4285F4;
+}
+
+.google:hover {
+    box-shadow: 0 0 15px #4285F4;
+}
+
+.facebook {
+    background-color: #3B5997;
+}
+
+.facebook:hover {
+    box-shadow: 0 0 15px #3B5997;
+}
+
+#g_logo {
+    margin: 2.5px;
+    margin-bottom: -3px;
+}
+
+.link {
+    position: relative;
+    top: -8px;
+    font-size: 18px;
+}
+
+.link a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+#g_link {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

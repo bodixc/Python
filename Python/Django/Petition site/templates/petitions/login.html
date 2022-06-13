@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_form.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Literata&display=swap" rel="stylesheet">
+    <div class="form" style="margin-top: 160px">
+    <form method="post">
+    {% csrf_token %}
+    <div class="title">Вхід</div>
+    {% for field in form %}
+      <div class="row">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+            <div class="help"><small style="color: grey">{{ field.help_text }}</small></div>
+            {% endif %}
+            </div>
+    {% endfor %}
+    <button type="submit" id="login">Увійти</button>
+    {% for error in form.non_field_errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+    </form>
+    <div class="social google">
+        <img src="{% static 'images/google.png' %}" id="g_logo">
+        <span class="link"><a href="{% url 'social:begin' 'google-oauth2'%}" id="g_link">Увійти з Google</a></span>
+    </div>
+    <div class="social facebook">
+        <img src="{% static 'images/facebook.png' %}">
+        <span class="link"><a href="{% url 'social:begin' 'facebook'%}">Увійти з Facebook</a></span>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_profile.css'%}">
+    <div class="info">
+    <h2>Особиста інформація</h2>
+    <div class="row">
+        <span>Електронна пошта ....................</span>
+        <span>{{ user.email }}</span>
+    </div>
+        <br>
+    <div class="row">
+        <span>Ім'я користувача .......................</span>
+        <span>{{ user.username }}</span>
+    </div>
+        <br>
+    <div class="row">
+        <span>Прізвище ..................................</span>
+        <span>{{ user.last_name }}</span>
+    </div>
+        <br>
+    <div class="row">
+        <span>Ім'я ...........................................</span>
+        <span>{{ user.first_name }}</span>
+    </div>
+    </div>
+
+    <div class="stat">
+    <h2>Статистика користувача</h2>
+    <div class="row">
+        <span>Створено петицій ......................</span>
+        <span>{{ user_petitions.count }}</span>
+    </div>
+    <div class="row">
+        <span>Петицій на зборі підписів ..........</span>
+        <span>{{ user_petitions_on_signing.count }}</span>
+    </div>
+        <br>
+    <div class="row">
+    <span>Видалено петицій ......................</span>
+    <span>{{ user_petitions_deleted.count }}</span>
+    </div>
+    <div class="row">
+        <span>Петицій на розгляді ..................</span>
+        <span>{{ user_petitions_on_consideration.count }}</span>
+    </div>
+        <br>
+    <div class="row">
+        <span>Зібрано підписів ........................</span>
+        <span>{{ user_petitions_signatures.count }}</span>
+    </div>
+    <div class="row">
+        <span>Петицій розлянуто....................</span>
+        <span>{{ user_petitions_is_considerated.count }}</span>
+    </div>
+        <br>
+    <div class="row">
+        <span>Підписані петиції ......................</span>
+        <span>{{ user_signatures.count }}</span>
+    </div>
+
+    <div class="row">
+        <span>Прострочених петицій...............</span>
+        <span>{{ user_petitions_overdue.count }}</span>
+    </div>
+    </div>
+    <form action="../../../petition/create/">
+    <input type="submit" value="Створити петицію"/>
+    </form>
+{% endblock content %}

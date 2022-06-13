@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_sign.css'%}">
+    <div class="form">
+    <h2>{{ header }}</h2>
+    <span class="petition"><a href="{{petition.get_absolute_url}}">{{petition.title}}</a>
+    <p>{{ petition.text}}</p>
+    </span>
+    <br>
+    <form method="post" action="">
+        {% csrf_token %}
+    {% if user.is_authenticated %}
+        <input type="submit" id='delete' value="Видалити">
+        {% endif %}
+    </form>
+    </div>
+    <script src="{% static 'scripts/list_script.js' %}"></script>
+    <script src="{% static 'scripts/sign_script.js' %}"></script>
+{% endblock %}

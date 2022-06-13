@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_form.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Literata&display=swap" rel="stylesheet">
+    <div class="form">
+    <form method="post">
+    {% csrf_token %}
+    <div class="title">Реєстрація користувача</div>
+    {% for field in form %}
+        <div class="row">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+            <div class="help"><small style="color: grey">{{ field.help_text }}</small></div>
+            {% endif %}
+            {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <button type="submit">Зареєструватися</button>
+  </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_search.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_list.css'%}">
+        <div class="form">
+    <form method="post" action="">
+    {% csrf_token %}
+    <div class="search">
+          <span>
+              {{ form.field }}
+          </span>
+        <button type="submit"></button>
+    </div>
+    <div class="select">{{ form.select.label }} {{ form.select }}</div>
+    {% for error in form.non_field_errors %}
+            <p class="error">{{ error }}</p>
+            {% endfor %}
+  </form>
+    </div>
+{% for petition in petitions %}
+    <span class="inner"><a class="title" href="{{petition.get_absolute_url}}">{{petition.title}}</a>
+    <p class="text">{{ petition.text}}</p>
+    </span>
+{% endfor %}
+    <script src="{% static 'scripts/list_script.js' %}"></script>
+    <script src="{% static 'scripts/search_script.js' %}"></script>
+{% endblock content %}
+

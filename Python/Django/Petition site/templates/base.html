@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/style_header.css'%}">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata&display=swap" rel="stylesheet">
+<div class="header">
+    <div>
+    {% for cat in categories %}
+        <li><a href="../../../category/{{cat.url}}/">{{cat}}</a></li>
+    {% endfor %}
+    </div>
+    <span>
+       <a href="../../../">Головна</a>
+    </span>
+    <span>
+       <a href="../../../all/">Усі петиції</a>
+    </span>
+    <span>
+        <a>Категорії</a>
+    </span>
+    <span>
+        <a href="../../../category/random/">Випадкова категорія</a>
+    </span>
+    <span>
+        <a href="../../../search/">Пошук</a>
+    </span>
+    <span>
+        <a href="../../../overdue/">Прострочені петиції</a>
+    </span>
+        {% if user.is_authenticated %}
+            <span>
+            <a href="../../../profile/">Профіль</a>
+            </span>
+            <span>
+            <a href="../../../my-petitions/">Мої петиції</a>
+            </span>
+            <span>
+            <a href="../../../logout/">Вихід</a>
+            </span>
+            {% else %}
+            <span>
+            <a href="../../../login/">Вхід</a>
+            </span>
+            <span>
+            <a href="../../../registration/">Реєстрація</a>
+            </span>
+        {% endif %}
+</div>
+
+{% block content %}
+
+{% endblock %}
+<script src="{% static 'scripts/header_script.js' %}">
+    </script>
+</body>
+</html>

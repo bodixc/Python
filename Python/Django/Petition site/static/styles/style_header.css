@@ -1,0 +1,52 @@
+.header {
+    text-align: center;
+}
+
+.header div {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    background-color: #3a3a3a;
+    color: white;
+    box-shadow: 0 4px 10px #1a1a1a;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.header div li{
+    float: left;
+    padding-left: 6px;
+}
+
+.header div li a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.header span {
+    position: relative;
+    margin: 1px;
+    background-color: #4C4C4C;
+    font-size: 24px;
+    border: 3px solid;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fafafa;
+    overflow-x: hidden;
+    word-wrap: break-word
+}
+
+.header span:hover {
+    top: -6px;
+    box-shadow: 0 6px 6px #1a1a1a;
+}
+
+.header span a {
+    position: relative;
+    top: -3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: #fafafa;
+    text-decoration: none;
+    white-space: nowrap;
+}

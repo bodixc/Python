@@ -1,0 +1,90 @@
+body {
+    font-family: 'Literata', serif;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.petition {
+    width: 32%;
+    margin-bottom: 2%;
+    display: inline-block;
+    #background: linear-gradient(to top, #eaeaea, #fafafa);
+    #border-bottom-right-radius: 3px;
+    #border-bottom-left-radius: 3px;
+    box-shadow: 1px 1px 10px #4a4a4a;
+}
+
+.petition:hover {
+    box-shadow: 7px 7px 10px #4a4a4a;
+}
+
+p {
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 6px;
+    margin-top: 1%;
+    word-wrap: break-word;
+}
+
+.petition a {
+    display: block;
+    color: white;
+    font-size: 20px;
+    #border: 1.7px outset #7a7a7a;
+    #border-radius: 7px;
+    width: 98.8%;
+    text-align: center;
+    #margin-left: -5px;
+    padding: 3px;
+    padding-top: 0px;
+    background-color: #3c3c3c;
+    text-decoration: none;
+}
+
+.form {
+    text-align: center;
+}
+
+.form form{
+    display: inline-table;
+}
+
+.field {
+    font-size: 20px;
+    border-radius: 3px;
+    border: 2px solid #2a2a2a;
+}
+
+#sign {
+    background-color: #34E6C0;
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+    #border: 2px outset black;
+    #border-radius: 8px;
+}
+
+#delete {
+    background-color: #d50d0d;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+    #border: 2px outset black;
+    color: white;
+    #border-radius: 8px;
+}
+
+input[type="submit"] {
+    border: none;
+    outline:none;
+}
+
+

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_list.css'%}">
+    <h1>{{ header }}</h1>
+{% for petition in petition_list %}
+    <span class="inner"><a href="{{petition.get_absolute_url}}">{{petition.title}}</a>
+    <p>{{ petition.text}}</p>
+    </span>
+{% endfor %}
+    <script src="{% static 'scripts/list_script.js' %}">
+    </script>
+{% endblock content %}

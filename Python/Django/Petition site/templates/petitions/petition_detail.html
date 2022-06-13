@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style_detail.css'%}">
+    <br>
+<div class = "Title">{{ petition.title }}</div>
+    <div>
+        <span class = "Category"><a href="../../category/{{ petition.category.url }}/">{{ petition.category}}</a></span>
+        <span class = 'tip'>Cкопійовано в буфер!</span>
+        <span class = "Url">Поділитись петицією: <a class="link">{{ petition.url }}</a></span>
+    </div>
+    <div class = "Text">{{ petition.text }}</div>
+    <div class = "Credentionals">
+    <img src="{% static 'images/cal.png'%}">
+    <span class = "CreationDate">{{ petition.creation_date }}</span>
+        <span class = "Author">{{petition.author.last_name}} {{petition.author.first_name}}</span>
+        <div class="form">
+        <form method="post" action="{% url 'search' %}">
+            {% csrf_token %}
+              <input type="text" name="field" value="{{ petition.author }}" maxlength="150" required="" id="id_field">
+                <select name="select" id="id_select">
+                <option value="1" selected="">користувачем</option>
+                </select>
+            <button class="user" type="submit">@{{ petition.author }}</button>
+         </form>
+        </div>
+    </div>
+    <br/>
+	<div class = "Status">{{ petition.status }}</div>
+    <div class="progress">
+        <div class="progress-value"></div>
+    </div>
+    <div class="Sign {{already}}"><a href="sign/">Підписати</a></div>
+    <div class="Delete {{delete}}"><a href="delete/">Видалити</a></div>
+    <p class="thead">Дану петицію підписали:</p>
+	<div class="Signers">
+    {% for signer in signers %}
+        {{signer.signer.last_name}} {{signer.signer.first_name}},
+    {% endfor %}
+	</div>
+    <script src="{% static 'scripts/base_script.js' %}">
+    </script>
+
+{% endblock %}
